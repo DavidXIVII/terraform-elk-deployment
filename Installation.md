@@ -1,7 +1,7 @@
 ## Edits Before Hand
 - Set the Variables.tf file to meet your own requirements.
- * AWS Region
- * AWS Key
+	* AWS Region
+	* AWS Key
  * AWS Instance Type
  * AWS Instance Name
  - AWS Private Key Path
