@@ -17,10 +17,14 @@ Add in the security section:
 >
 >xpack.security.authc.api_key.enabled: true
 
+```sh
+sudo systemctl restart elasticsearch.service
+```
+
 ## 2 - Generate Passwords For Secured Connection
 ```sh
-sudo cd /usr/share/elasticsearch/
-./bin/elasticsearch-setup-passwords interactive
+cd /usr/share/elasticsearch/
+sudo ./bin/elasticsearch-setup-passwords interactive
 ```
 Generate Passcodes (Write Them)
 
@@ -28,7 +32,7 @@ Generate Passcodes (Write Them)
 ```sh
 sudo nano /etc/kibana/kibana.yml
 ```
-Edit these 2 lines:
+Edit these 2 lines: (Note they both are commented with # so uncomment them)
 
 * elasticsearch.username: "kibana_system" (Defualt Kibana username)
 * elasticsearch.passowrd: [MY_KIBANA_SYSTEM_PASSWORD] (Generated in [Generate Passwords For Secured Connection](https://github.com/DavidXIVII/terraform-elk-deployment/blob/main/Installation.md#2---generate-passwords-for-secured-connection))
@@ -42,13 +46,41 @@ You could also restart Elasticsearch but its not needed.
 ## 4 - Create A Fleet Server
 > http://<elasticsearch-ip:port>/app/fleet/agents
 
-In this instllation excessing the AWS Instance Public IP in port 80 granting you access to Elasticsearch
+Notice in this installation I'm using the created instnace as Fleet Server as well,
 
-Follow the builtin guide to download and install the fleet server on a new server on the server you use right now.
+Before initiating your Fleet Server edit Fleet Settings: (You can find the button on the top right section of the webpage)
+Under Fleet Server Hosts:
+>http://<aws-private-dns-ip>:8220
+example: http://ip-172-31-7-173.eu-central-1.compute.internal:8220
+
+Port 8220 is needed to be open so data can be sent to the server Fleet.
+
+Under Elasticsearh Hosts:
+>http://<aws-private-dns-ip>:8080
+example: http://ip-172-31-7-173.eu-central-1.compute.internal:8080
+
+Port 8080 is a redirection to 9200 (Elasticsearh)
+
+Refersh the fleet page or wait few seconds and follow the guidelines.
+You'll be promoted to download an agent (just like in [#5 - Join A Node](https://github.com/DavidXIVII/terraform-elk-deployment/blob/main/Installation.md#5---join-a-node-to-the-fleet))
+
+Extracted it & Run the given command prompt.
 
 ## 5 - Join A Node To The Fleet
 After creating a Fleet you will have a new button "Add Agent".
 You can and should follow the instructions promoted there to install the agent on a machine.
+
+Download the Agent (we deployed elasticsearch version 7.17.6) that matches your system:
+[Download Agent](https://www.elastic.co/downloads/past-releases/elastic-agent-7-17-6)
+
+How to do it on Linux OS:
+```sh
+cd ~
+wget https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-7.17.6-linux-x86_64.tar.gz -o elastic-agent.tar.gz
+tar -xf elastic-agent.tar.gz
+cd elastic-agent (!AUTO COMPLETE IT WITH TAB!)
+
+```
 
 
 Keep in mind due to us not running ELK on a secured https connection at so we will need to run the attachement command,
