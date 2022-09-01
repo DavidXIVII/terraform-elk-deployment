@@ -28,8 +28,9 @@ Generate Passcodes (Write Them)
 sudo nano /etc/kibana/kibana.yml
 ```
 Edit these 2 lines:
-elasticsearch.username: "kibana_system" (Defualt)
-elasticsearch.passowrd: [MY_KIBANA_SYSTEM_PASSWORD] (Generated Before)
+
+* elasticsearch.username: "kibana_system" (Defualt Kibana username)
+* elasticsearch.passowrd: [MY_KIBANA_SYSTEM_PASSWORD] (Generated in [2](#2))
 sudo systemctl restart kibana
 
 ## 4 - Create A Fleet Server
