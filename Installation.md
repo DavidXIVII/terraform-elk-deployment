@@ -51,12 +51,14 @@ Notice in this installation I'm using the created instnace as Fleet Server as we
 Before initiating your Fleet Server edit Fleet Settings: (You can find the button on the top right section of the webpage)
 Under Fleet Server Hosts:
 >http://<aws-private-dns-ip>:8220
+>
 >example: http://ip-172-31-7-173.eu-central-1.compute.internal:8220
 
 Port 8220 is needed to be open so data can be sent to the server Fleet.
 
 Under Elasticsearh Hosts:
 >http://<aws-private-dns-ip>:8080
+>
 >example: http://ip-172-31-7-173.eu-central-1.compute.internal:8080
 
 Port 8080 is a redirection to 9200 (Elasticsearh)

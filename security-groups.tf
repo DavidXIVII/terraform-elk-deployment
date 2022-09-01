@@ -24,6 +24,7 @@ resource "aws_security_group" "elk" {
     description = "HTTP Redirection To ElasticSearch"
 
   }
+
   # Fleet Server Port
 
   ingress {
