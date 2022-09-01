@@ -43,7 +43,15 @@ You could also restart Elasticsearch but its not needed.
 
 In this instllation excessing the AWS Instance Public IP in port 80 granting you access to Elasticsearch
 
-In the command line add --insecure due to us not working under a secure connection.
+Follow the builtin guide to download and install the fleet server on a new server on the server you use right now.
+
+## 5 - Join A Node To The Fleet
+After creating a Fleet you will have a new button "Add Agent".
+You can and should follow the instructions promoted there to install the agent on a machine.
+
+
+Keep in mind due to us not running ELK on a secured https connection at so we will need to run the attachement command,
+To be run not secure so we will add --insecure to the yml file we runs on the agents machine.
 
 example:
 ```sh
