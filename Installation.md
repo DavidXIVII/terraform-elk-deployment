@@ -31,8 +31,13 @@ Edit these 2 lines:
 
 * elasticsearch.username: "kibana_system" (Defualt Kibana username)
 * elasticsearch.passowrd: [MY_KIBANA_SYSTEM_PASSWORD] (Generated in [Generate Passwords For Secured Connection](https://github.com/DavidXIVII/terraform-elk-deployment/blob/main/Installation.md#2---generate-passwords-for-secured-connection))
-sudo systemctl restart kibana
 
+Restart Kibana
+```sh
+sudo systemctl restart kibana
+```
+
+You could also restart Elasticsearch but its not needed.
 ## 4 - Create A Fleet Server
 http://<host-ip:port>/app/fleet/agents ; # you can create one on your local machine
 
