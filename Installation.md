@@ -39,7 +39,8 @@ sudo systemctl restart kibana
 
 You could also restart Elasticsearch but its not needed.
 ## 4 - Create A Fleet Server
-http://<host-ip:port>/app/fleet/agents ; # you can create one on your local machine
+http://<elasticsearch-ip:port>/app/fleet/agents ; # you can create one on your local machine
+In this instllation excessing the AWS Instance Public IP in port 80 granting you access to Elasticsearch
 
 In the command line add --insecure due to us not working under a secure connection.
 
