@@ -14,7 +14,7 @@ sudo nano /etc/elasticsearch/elasticsearch.yml
 ```
 Add in the security section:
 >xpack.security.enabled: true
-xpack.security.authc.api_key.enabled: true
+>xpack.security.authc.api_key.enabled: true
 
 ## 2 - Generate Passwords For Secured Connection
 ```sh
