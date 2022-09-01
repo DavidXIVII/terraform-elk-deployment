@@ -57,7 +57,7 @@ Under Fleet Server Hosts:
 Port 8220 is needed to be open so data can be sent to the server Fleet.
 
 Under Elasticsearh Hosts:
->http://<aws-private-dns-ip>:8080
+>http://<aws-private-dns-ip:8080>
 >
 >example: http://ip-172-31-7-173.eu-central-1.compute.internal:8080
 
