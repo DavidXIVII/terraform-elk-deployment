@@ -1,3 +1,11 @@
+## Edits Before Hand
+- Set the Variables.tf file to meet your own requirements.
+-- AWS Region
+-- AWS Key
+-- AWS Instance Type
+-- AWS Instance Name
+-- AWS Private Key Path
+
 After Terraform deployed your server with all its dependencies.
 
 #1 - Enable Security Parameters In Elasticsearch

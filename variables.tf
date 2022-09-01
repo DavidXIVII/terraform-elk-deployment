@@ -7,7 +7,7 @@ variable "region" {
 variable "key" {
   description = "AWS key name"
   type        = string
-  default     = "david"
+  default     = ""
 }
 
 variable "instance" {
@@ -25,5 +25,5 @@ variable "instance_name" {
 variable "private_key" {
   description = "Private Key Path"
   type        = string
-  default     = "~/Downloads/david.pem"
+  default     = "PATH TO PEM KEY"
 }
