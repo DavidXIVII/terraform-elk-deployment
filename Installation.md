@@ -30,7 +30,7 @@ sudo nano /etc/kibana/kibana.yml
 Edit these 2 lines:
 
 * elasticsearch.username: "kibana_system" (Defualt Kibana username)
-* elasticsearch.passowrd: [MY_KIBANA_SYSTEM_PASSWORD] (Generated in [2](#2))
+* elasticsearch.passowrd: [MY_KIBANA_SYSTEM_PASSWORD] (Generated in [Generate Passwords For Secured Connection](https://github.com/DavidXIVII/terraform-elk-deployment/blob/main/Installation.md#2---generate-passwords-for-secured-connection))
 sudo systemctl restart kibana
 
 ## 4 - Create A Fleet Server
